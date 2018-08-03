@@ -29,7 +29,7 @@ try {
 
                 stage('Compile') {
                     sh 'mvn compile'
-                    env.JAR_VERSION = readMavenPom().version
+//                    env.JAR_VERSION = readMavenPom().version
                 }
 
                 stage('Test') {
@@ -38,7 +38,7 @@ try {
 
                 stage('Build') {
                     sh 'mvn -DskipTests package'
-                    sh 'cp api/target/*.jar docker/'
+//                    sh 'cp api/target/*.jar docker/'
                 }
 
 //                stage('Dockerize') {
@@ -96,8 +96,8 @@ try {
         notifyAboutFail()
     throw ex
 } finally {
-    if (onDevelopBranch() && success && currentBuild.previousBuild.result == 'FAILURE')
-        notifyAboutRecover()
+//    if (onDevelopBranch() && success && currentBuild.previousBuild.result == 'FAILURE')
+//        notifyAboutRecover()
 }
 
 def notifyAboutFail() {
