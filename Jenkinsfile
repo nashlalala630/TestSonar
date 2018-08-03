@@ -20,12 +20,12 @@ try {
 //        timestamps {
 //            dir("$env.BRANCH_NAME/$env.BUILD_NUMBER") {
 
-//                stage('Clone') {
-//                    checkout scm
+                stage('Clone') {
+                    checkout scm
 //                    stash name: 'marathon_file', includes: 'marathon/*.tpl'
 //                    env.DOCKER_IMAGE = getImageVersion(formattedBranchName) // used in marathon.json.tpl
 //                    lastCommitAuthorEmail = getLastCommitAuthorEmail()
-//                }
+                }
 
                 stage('Compile') {
                     bat 'mvn compile'
