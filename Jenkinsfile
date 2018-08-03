@@ -42,7 +42,7 @@ try {
                 }
 
                 stage('Sonar') {
-                    withSonarQubeEnv('My SonarQube Server') {
+                    withSonarQubeEnv('sonarqube') {
                         bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
                     }
                 }
