@@ -41,6 +41,12 @@ try {
 //                    sh 'cp api/target/*.jar docker/'
                 }
 
+                stage('Sonar') {
+                    withSonarQubeEnv('My SonarQube Server') {
+                        bat 'mvn sonar:sonar'
+                    }
+                }
+
 //                stage('Dockerize') {
 //                    dir('docker') {
 //                        sh "docker build --build-arg version=$env.JAR_VERSION -t $env.DOCKER_IMAGE ."
