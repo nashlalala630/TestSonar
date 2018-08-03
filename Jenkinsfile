@@ -28,16 +28,16 @@ try {
 //                }
 
                 stage('Compile') {
-                    sh 'mvn compile'
+                    bat 'mvn compile'
 //                    env.JAR_VERSION = readMavenPom().version
                 }
 
                 stage('Test') {
-                    sh 'mvn test'
+                    bat 'mvn test'
                 }
 
                 stage('Build') {
-                    sh 'mvn -DskipTests package'
+                    bat 'mvn -DskipTests package'
 //                    sh 'cp api/target/*.jar docker/'
                 }
 
