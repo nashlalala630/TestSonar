@@ -15,9 +15,10 @@ formattedBranchName = env.BRANCH_NAME.replaceAll('/', '-').toLowerCase()
 success = true
 
 try {
-    node('java8-dind-maven3') {
-        timestamps {
-            dir("$env.BRANCH_NAME/$env.BUILD_NUMBER") {
+//    node('java8-dind-maven3') {
+    node {
+//        timestamps {
+//            dir("$env.BRANCH_NAME/$env.BUILD_NUMBER") {
 
 //                stage('Clone') {
 //                    checkout scm
@@ -46,8 +47,8 @@ try {
 //                        sh "docker push $env.DOCKER_IMAGE"
 //                    }
 //                }
-            }
-        }
+//            }
+//        }
     }
 
 //    env.MARATHON_APP_ID = "$group/$product/$application"    // used in marathon.json.tpl
